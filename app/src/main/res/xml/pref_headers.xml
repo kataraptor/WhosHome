@@ -6,7 +6,7 @@
         android:fragment="club.yft.whoshome.SettingsActivity$GeneralPreferenceFragment"
         android:icon="@drawable/ic_info_black_24dp"
         android:title="@string/pref_header_general" />
-    <header android:title="Account"
+    <header android:title="@string/pref_header_account"
         android:icon="@drawable/ic_account_circle_black_24dp">
         <intent android:targetPackage="club.yft.whoshome"
                 android:targetClass="club.yft.whoshome.LoginActivity"/>
