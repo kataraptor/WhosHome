@@ -1,18 +1,16 @@
 {
   "project_info": {
-    "project_id": "whoshome-aa119",
     "project_number": "534522240362",
-    "name": "whoshome"
+    "firebase_url": "https://whoshome-aa119.firebaseio.com",
+    "project_id": "whoshome-aa119",
+    "storage_bucket": "whoshome-aa119.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:534522240362:android:fa16bd79e9bd9551",
-        "client_id": "android:club.yft.whoshome",
-        "client_type": 1,
         "android_client_info": {
-          "package_name": "club.yft.whoshome",
-          "certificate_hash": []
+          "package_name": "club.yft.whoshome"
         }
       },
       "oauth_client": [
@@ -25,25 +23,26 @@
           }
         },
         {
+          "client_id": "534522240362-kr8dcf6vjl1ri80gplmuq804ksje3088.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
           "client_id": "534522240362-hvqn5nvskqrttcvehahrai78d7fpl7cl.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
-      "api_key": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAe2SccS2X-leZfpXxZs7WCDnyNkJyBaQU"
+        }
+      ],
       "services": {
         "analytics_service": {
           "status": 1
         },
-        "cloud_messaging_service": {
-          "status": 2,
-          "apns_config": []
-        },
         "appinvite_service": {
           "status": 1,
           "other_platform_oauth_client": []
-        },
-        "google_signin_service": {
-          "status": 2
         },
         "ads_service": {
           "status": 1
@@ -51,6 +50,5 @@
       }
     }
   ],
-  "client_info": [],
-  "ARTIFACT_VERSION": "1"
+  "configuration_version": "1"
 }
