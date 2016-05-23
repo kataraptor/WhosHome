@@ -6,14 +6,18 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.firebase.iid.FirebaseInstanceId;
 
-public class HomeActivity extends AppCompatActivity {
-
+public class HomeActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
+    public static final String TAG = "Who'sHomeActivity";
+    private GoogleApiClient mGoogleApiClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,18 +29,15 @@ public class HomeActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "You are punched in", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "InstanceID token: " + FirebaseInstanceId.getInstance().getToken(), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
-/*
-        GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .enableAutoManage(this /* FragmentActivity ,
-                        this /* OnConnectionFailedListener)
-                .addApi()
-                .addScope(Drive.SCOPE_FILE)
-                .build();
-        */
+
+    }
+    @Override
+    public void onConnectionFailed(ConnectionResult result){
+        Log.e(TAG, "Google Play Services Connection Failure. Result: "+result.getErrorMessage()+" Code: "+result.getErrorCode());
     }
 
     @Override
@@ -61,11 +62,4 @@ public class HomeActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void onConnectionFailed(ConnectionResult result) {
-        // An unresolvable error has occurred and a connection to Google APIs
-        // could not be established. Display an error message, or handle
-        // the failure silently
-
-        // ...
-    }
 }
